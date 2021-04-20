@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+         <%- include('layout/header.ejs')%>
+    </header>
+    <main>
+        <%   recivedData.forEach(x=>{%>
+
+            <div id="indexForm">
+             <h4 class="indexForm"><%= x.character%></h4>   
+             <p  class="indexForm"><%= x.quote%></p>
+             <img  class="indexForm" src="<%= x.image%>" alt="">
+            </div>
+            
+        
+                <form action="/" method="POST">
+                  <input type="hidden" value="<%= x.character%>" name="character">
+                  <input type="hidden" value="<%= x.quote%>" name="quote">
+                  <input type="hidden" value="<%= x.image%>" name="image">
+
+
+                    <button type="submit">FAVORITE CHARACTER</button>
+                </form>
+          
+            <% })%>
+
+
+    </main>
+    <footer>
+        <%- include('layout/footer.ejs')%>
+    </footer>
+</body>
+
+</html>

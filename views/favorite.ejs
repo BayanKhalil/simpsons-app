@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <%- include('layout/header.ejs')%>
+   </header>
+
+    <main>
+       <div>
+       <h4><%=  favorite-quotes.character%></h4>   
+       <p><%=  favorite-quotes.quote%></p>
+       <img src="<%=  favorite-quotes.image%>" alt="">
+    </div>
+
+    <div>
+        <form action="/favorite-quotes/<%=  favorite-quotes.id%>?_method=PUT" method="POST">
+            <input type="text" value="<%=  favorite-quotes.character%>" name="character">
+            <input type="text" value="<%=  favorite-quotes.quote%>" name="quote">
+            <input type="text" value="<%=  favorite-quotes.image%>" name="image">
+            <input type="hidden" value="<%=  favorite-quotes.id%>" name="id">
+            <button type="submit">UPDATE</button>
+        </form>
+    </div>
+
+    <div>
+        <form action="/favorite-quotes/<%=  favorite-quotes.id%>?_method=DELETE" method="POST">
+          
+            <input type="hidden" value="<%=  favorite-quotes.id%>" name="id">
+            <button >DELETE</button>
+        </form>
+    </div>
+
+
+
+    
+    </main>
+
+    <footer>
+        <%- include('layout/footer.ejs')%>
+    </footer>
+
+</body>
+</html>

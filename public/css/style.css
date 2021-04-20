@@ -1,0 +1,26 @@
+section{
+    display: inline-block;
+}
+
+
+#indexForm{
+
+
+    display: flex;
+    flex-flow: row wrap;
+    
+
+}
+
+form{
+    text-align: center;
+}
+.indexForm{
+
+    display: flex;
+    flex-flow: row wrap;
+}
+img .indexForm{
+    width: 30%;
+}
+
