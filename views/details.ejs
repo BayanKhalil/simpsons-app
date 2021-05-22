@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/details.css">
+</head>
+
+<body>
+    <header>
+         <%- include('layout/header.ejs')%>
+    </header>
+    <main>
+       <img src="<%= data.image%>" >
+       <p><%= data.character%></p>
+       <p><%= data.quote%></p>
+       <p><%= data.characterdirection%></p>
+       <form action="/favorite-quotes/<%= data.id%>?_method=PUT" method="POST">
+         <input type="text" name="image" value="<%= data.image%>">
+         <input type="text" name="character" value="<%= data.character%>">
+         <input type="text" name="quote" value="<%= data.quote%>">
+        
+         <select name="status" >
+            <% if (data.characterdirection==="Left"){%>
+             <option value="R">RIGHT</option>
+             <option value="L">LEFT</option>
+             <%}else{%>
+                <option value="L">LEFT</option>
+                <option value="R">RIGHT</option>
+                <%}%>
+         </select>
+          <input type="submit" value="UPDATE">
+       </form>
+
+
+       <form action="/favorite-quotes/<%= data.id%>?_method=DELETE" method="POST">
+
+        <input type="submit" value="DELETE">
+        </form>
+    </main>
+    <footer>
+        <%- include('layout/footer.ejs')%>
+    </footer>
+</body>
+
+</html>

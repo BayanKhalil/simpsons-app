@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS myCollection 
+CREATE TABLE IF NOT EXISTS mycollection 
 (
     id SERIAL NOT NULL,
     character VARCHAR(250) NOT NULL,

@@ -1,26 +1,69 @@
-section{
-    display: inline-block;
+*{
+    box-sizing: border-box;
 }
 
+main{
+    background-color: teal;
+}
+img{
+    width: 20%;
+}
+a{
+    float: right;
+    padding-left: 50px;
+    text-decoration: none;
+}
+/* index */
+#index{
 
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+   
+} 
 #indexForm{
-
-
-    display: flex;
-    flex-flow: row wrap;
-    
-
-}
-
-form{
-    text-align: center;
-}
-.indexForm{
-
-    display: flex;
-    flex-flow: row wrap;
-}
-img .indexForm{
+     border: whitesmoke solid 1px;
+      background-color: tomato;
     width: 30%;
+    text-align: center;
+    
 }
+/* fav */
+ #fav{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    border: rgb(245, 5, 5) solid 2px;
+ 
+
+}
+
+
+
+.Right{
+   
+    margin-left: 40%;
+    width: 45%;
+    display: flex;
+    align-items: flex-end;
+    flex-flow: column wrap;
+}
+
+.Right .fav  {
+    width: 40%;
+
+}
+.Left{
+    
+    margin-right: 40%;
+    width: 45%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:space-around;
+    align-items: flex-start;
+}
+.Left .fav{
+    width: 40%;
+}
+
 

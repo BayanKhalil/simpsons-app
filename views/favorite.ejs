@@ -6,45 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
     <header>
         <%- include('layout/header.ejs')%>
-   </header>
+    </header>
+    <main id="fav" >
+       
+        <% data.forEach(y=>{%>
+            <div class='<%= y.characterdirection%>'>
+                   
+                
+                    <img class="fav"src="<%= y.image%>" >
+                    <p  class="fav"><%= y.character%></p>
+                    <p class="fav"><%= y.quote%></p>
+                    <a  class="fav"href="/favorite-quotes/<%= y.id%>">VIEW DETAILS</a>
+               
+            </div>
+            <%})%>
+       
 
-    <main>
-       <div>
-       <h4><%=  favorite-quotes.character%></h4>   
-       <p><%=  favorite-quotes.quote%></p>
-       <img src="<%=  favorite-quotes.image%>" alt="">
-    </div>
-
-    <div>
-        <form action="/favorite-quotes/<%=  favorite-quotes.id%>?_method=PUT" method="POST">
-            <input type="text" value="<%=  favorite-quotes.character%>" name="character">
-            <input type="text" value="<%=  favorite-quotes.quote%>" name="quote">
-            <input type="text" value="<%=  favorite-quotes.image%>" name="image">
-            <input type="hidden" value="<%=  favorite-quotes.id%>" name="id">
-            <button type="submit">UPDATE</button>
-        </form>
-    </div>
-
-    <div>
-        <form action="/favorite-quotes/<%=  favorite-quotes.id%>?_method=DELETE" method="POST">
-          
-            <input type="hidden" value="<%=  favorite-quotes.id%>" name="id">
-            <button >DELETE</button>
-        </form>
-    </div>
-
-
-
-    
     </main>
-
-    <footer>
-        <%- include('layout/footer.ejs')%>
-    </footer>
-
 </body>
 </html>

@@ -13,26 +13,30 @@
     <header>
          <%- include('layout/header.ejs')%>
     </header>
-    <main>
-        <%   recivedData.forEach(x=>{%>
-
+    <main id="index">
+        <%   data.forEach(x=>{%>
             <div id="indexForm">
-             <h4 class="indexForm"><%= x.character%></h4>   
-             <p  class="indexForm"><%= x.quote%></p>
-             <img  class="indexForm" src="<%= x.image%>" alt="">
-            </div>
-            
+
+            <img  class="indexForm" src="<%= x.image%>" alt="">
+            <h4 class="indexForm"><%= x.character%></h4>   
+                <p  class="indexForm"><%= x.quote%></p>
+                <p  class="indexForm"><%= x.characterDirection%></p>
+
+
+                
+                        <form action="/favorite-quotes" method="POST">
+                            <input type="hidden" value="<%= x.image%>" name="image">
+                            <input type="hidden" value="<%= x.character%>" name="character">
+                            <input type="hidden" value="<%= x.quote%>" name="quote">
+                          <input type="hidden" value="<%= x.characterDirection%>" name="characterDirection">
         
-                <form action="/" method="POST">
-                  <input type="hidden" value="<%= x.character%>" name="character">
-                  <input type="hidden" value="<%= x.quote%>" name="quote">
-                  <input type="hidden" value="<%= x.image%>" name="image">
-
-
-                    <button type="submit">FAVORITE CHARACTER</button>
-                </form>
-          
-            <% })%>
+        
+                            <button type="submit">ADD</button>
+                        </form>
+                        
+                        
+                    </div>
+                        <% })%>
 
 
     </main>
